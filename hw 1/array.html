@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array</title>
+    </head>
+    <body>
+    <script>
+         function modes(i) {
+            var script = document.createElement('script');
+            var WAY = "mod0.js";
+            WAY = WAY.replace(0, i);
+            script.src = WAY;
+            return document.body.appendChild(script);
+        }
+    </script>
+        <script>
+            var i = 1;
+              modes(i);
+        </script>
+    </body>
+</html>
