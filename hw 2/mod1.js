@@ -1,90 +1,170 @@
 var j;
-j=+prompt ("how much drugs do you have?","3");
-var name;
-var drugs={};
-for (i=1;i<j+1;i++) {
-    name="Drugs"+i;
-    drugs[name]=prompt("name of this shit: ", "Heroin");
-}
-
-
-
+var met={};
  //pop - удаляет последний елемент масива
-i=1;
-name="Drugs"+i;
-    for (i=1;typeof drugs["Drugs"+i] !="undefined";i++){
-        j=i;
+met.pop= function () {
+        for (i = 0; typeof this[String(i)] != "undefined"; i++) {
+            j = String(i);
+        }
+        delete this[j];
     }
-    name="Drugs"+j;
-    delete drugs[name];
 
 
 
  //push - добавляет последний елемент масива
-i=1;
-name="Drugs"+i;
-for (i=1;typeof drugs["Drugs"+i] !="undefined";i++){
-    j=i;
+met.push= function (el) {
+ //   console.log(arguments.length);
+ //   for (i = 0; i < arguments.length; i++) {
+  //      this[String(this.length())] = arguments[i];
+//        console.log(arguments[i]);
+  //  }
+    this[String(this.length())] = el;
 }
-j=j+1;
-name="Drugs"+j;
-drugs[name]=prompt("name of this shit: ", "Heroin");
-
-
 //join обєднує в строку
-var a;
-a=prompt("what to do with it all? : ", "Smoke");
-var b= " ";
-i=1;
-name="Drugs"+i;
-for (i=1;typeof drugs["Drugs"+i] !="undefined";i++){
-    j=i;
-    b=b+" "+a+" "+drugs["Drugs"+j];
+met.join= function (and) {
+    var b= String(this[String("0")]);
+    for (i = 1; typeof this[String(i)] != "undefined"; i++) {
+        if (typeof and!="undefined") {
+            b = b + and + this[String(i)];
+        }else {
+            b = b + this[String(i)];
+        }
+    }
+    return b;
 }
-
 
 // filter фильтруй
-var c={};
-for (i=1;typeof drugs["Drugs"+i] !="undefined";i++) {
-    j = i;
-
-    if (typeof drugs["Drugs" + j] != "number") {
-        c["Drugs" + j] = drugs["Drugs" + j];
-    }
-}
-
-
-
-/// find
-a=prompt("what we are looking for: ", "Heroin");
-b=undefined;
-for (i=1;typeof drugs["Drugs"+i] !="undefined";i++) {
-    j = i;
-
-    if (typeof drugs["Drugs" + j] != "number") {
-        if(typeof b=="undefined") {
-            b = ["Drugs" + j] + ": " + drugs["Drugs" + j];
+function fil(value){                                    // this is filter
+    if (typeof value!="undefined"){
+        if (value %2 == 0) {
+            return value;
         }
     }
 }
 
-
-/// map
-for (i=1;typeof drugs["Drugs"+i] !="undefined";i++){
-    j=i;
-    drugs["Drugs"+j]=prompt("new name of this shit: ", "Heroin");
+met.filter= function (func) {
+    if (typeof func =="function") {
+        var c = Object.create(met);
+        var j = 0;
+        for (i = 0; typeof this[String(i)] != "undefined"; i++) {
+            if (typeof func(this[String(i)])!="undefined"){
+                c[[String(j)]] = func(this[String(i)]);
+                ++j;
+            }
+        }
+        return c;
+    } else {
+        return "undefined";
+    }
 }
 
 
-/// toString
+/// find
+met.find= function (func) {
+    if (typeof func =="function") {
+        for (i = 0; typeof this[String(i)] != "undefined"; i++) {
+            if (typeof func(this[String(i)])!="undefined"){
+                return func(this[String(i)]);
+            }
+        }
+    } else {
+        return undefined;
+    }
+}
+
+
+
+
+/// tostring
+met.tost= function () {
+        var b= "0: "+String(this[String("0")])+ "; ";
+        for (i = 1; typeof this[String(i)] != "undefined"; i++) {
+                b = b + i+": " + this[String(i)]+ "; ";
+        }
+        return b;
+    }
+
+
+/// map
+met.map= function (func) {
+    if (typeof func =="function") {
+        var c = Object.create(met);
+        c=this;
+        for (i = 0; typeof this[String(i)] != "undefined"; i++) {
+            c[[String(i)]] = func(this[String(i)]);
+        }
+        return c;
+    } else {
+        return "undefined";
+    }
+}
+
+
+
+
+////sort
+met.sort= function () {
+    this.sort1(0);
+}
+met.sort1= function (k) {
+    var a;
+    var b;
+    if (typeof String(this[String(j)])[k] != "undefined") {
+        for (i = 0; typeof this[String(i)] != "undefined"; i++) {
+            for (j = 0; typeof this[String(j)] != "undefined"; j++) {
+                if (String(this[String(j)])[k] > String(this[String(j + 1)])[k]) {
+                    a = this[String(j)];
+                    b = this[String(j + 1)];
+                    this[String(j + 1)] = a;
+                    this[String(j)] = b;
+                } else if (String(this[String(j)])[k] === String(this[String(j + 1)])[k]) {
+                    met.sort1(k + 1);
+                }
+            }
+        }
+    }
+}
+
 
 
 
 
 
 /// length
-var len;
-for (i=1;typeof drugs["Drugs"+i] !="undefined";i++) {
-    j = i;
+met.length= function () {
+    for (i = 1; typeof this[String(i)] != "undefined"; i++) {
+    }
+    return i;
 }
-len=j;
+met.test= function (a) {
+return a();
+}
+
+
+
+/// ARRAY
+
+j=Math.round(Math.random()*10);
+var arr=Object.create(met);
+// j=+prompt ("langth array","3");
+var array=Object.create(met);
+for (i=0;i<+j+1;i++) {
+    array[String(i)]=Math.round(Math.random()*100);
+}
+console.log("start array = "+array.tost());
+array.pop();
+console.log("array after pop = "+array.tost());
+array.push(7)
+console.log("array after push = "+array.tost());
+console.log("array after join = "+array.join(" something; "));
+
+arr=array.filter(fil);
+console.log("array after filter (%2==0) = "+arr.tost());
+console.log("array after find (%2==0) = "+array.find(fil));
+var formap=function(value){
+    return (value+1)*value;
+}
+arr=array.map(formap)
+console.log("array after map  = "+arr.tost());
+array.sort();
+console.log("array after sort = "+array.tost());
+console.log("length of array after all = "+array.length());
