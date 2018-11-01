@@ -55,12 +55,17 @@ function capsLock(str) {
         }
     }
     for( i=1;i<str.length;i++) {
-        if (retstr[i] != UpSTR[i])
-            return retstr;
+
+        if (str[i] == UpSTR[i] ||str[i] == Lowstr[i] && str[i-1]==" "){
+        } else {
+            return str;
+        }
+
+
     }
-    else{
-        return str;
-    }
+
+    return retstr;
+
 }
 
 
