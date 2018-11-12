@@ -24,7 +24,7 @@ function water(x,i,arr) {
     let j;
 
     for (j=0;j<sarr.length||ind!=2;j++){
-debugger
+//debugger
         if(arr[j]==sarr[0]||arr[j]==sarr[1]){       //Ð¾Ð¿Ñ€Ð¸Ð´Ð¸Ð»ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¸ Ð¿ÐµÑ€Ð²Ð¾Ð¹ ÑÐ°Ð¼Ð¾Ð¹Ð²Ð¸ÑÐ¾ÐºÐ¾Ð¹ Ñ‚Ð¾Ñ‡ÐºÐ¸ Ð½Ð° ÑÑ‚Ð¾Ñ‚ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚
 
 		   ind+=1;
