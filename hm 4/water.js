@@ -10,7 +10,7 @@ if(arr.length<3) {
 	array.forEach(water);  
 }
 function water(x,i,arr) {
-    debugger
+//    debugger
     if(arr.length<3) {
        return iw;
     } 
