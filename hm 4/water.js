@@ -6,7 +6,7 @@ var array=[0,10,10,0,5,7,2,0];
 console.log(array);
 var iw=0;                                               /// ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð²Ð¾Ð´Ð¸
 array.forEach(water);                                   ///Ð·Ð°Ð¿ÑƒÑ Ð¿Ð¾Ð´ÑÑ‡ÐµÑ‚Ð°
-if(arr.length<3) {
+if(array.length<3) {
 	array.forEach(water);  
 }
 function water(x,i,arr) {
