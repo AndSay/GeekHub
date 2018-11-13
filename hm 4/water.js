@@ -5,17 +5,14 @@ for (let i=0;i<+j+1;i++) {                            ///генерация ра
 }
 console.log(array);
 var iw=0;   
-while(array.length>3){                                            /// количество води
+while(array.length>2){                                            /// количество води
 	array.forEach(water); 
 }                                  ///запус подсчета
 console.log(iw);
 
 
 function water(x,i,arr) {
-   // debugger
-    if(arr.length<3) {
-       return iw;
-    }
+   debugger
     let sarr=arr.slice();
     sarr.sort(function(a, b) {
 		return b - a;
@@ -36,7 +33,7 @@ function water(x,i,arr) {
 //        }else{
 //             j=arr.indexOf(sarr[sarr.length-2]);
 //         }
-        if(ind==2||arr.length<3){
+        if(ind==2){
             continue;
         }
         if(ind==1) {
