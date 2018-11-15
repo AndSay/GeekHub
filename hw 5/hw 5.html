@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work with DOM</title>
+</head>
+<body>
+<p><b>Что покупаем:</b><br>
+   <input type="text" size="40" id="textIN">
+   <input type="button" value="Добавить" id="addbutt">
+   <input type="button" value="Revers" id="reversbutt">
+  </p>
+  
+
+
+<ul class="item-list" id="list">
+
+</ul>
+<script>
+
+    addbutt.addEventListener('click', function addlist() {
+        let text=document.getElementById('textIN').value;
+        if (text!='') {
+            let tab=document.createElement('li')
+            let TextIn = document.createElement('label');
+            let check=document.createElement('input');
+            let now = new Date();
+            let time = now.getDate()+'.'+now.getMonth()+'.'+now.getFullYear()+' '+' '+now.getHours()+':'+now.getMinutes();
+
+            check.type="checkbox";
+            TextIn.innerHTML = text+ '        '+':'+ ' '+ time;
+            //      tab.id = "item" + TextIn.length;
+            list.appendChild(tab);
+            tab.appendChild(check);
+            tab.appendChild(TextIn);
+            document.getElementById('textIN').value='';
+
+        }
+    });
+
+    reversbutt.addEventListener('click', function revers() {
+        let tab = list.children;
+        for (let i = tab.length - 1; i>=0; i -- ) {
+            list.appendChild(tab[i]);
+        }
+    }
+
+
+    );
+</script>
+</body>
+
+</html>
