@@ -1,0 +1,19 @@
+Заняття 2018-11-24
+Читати: 
+https://learn.javascript.ru/introduction-browser-events
+https://learn.javascript.ru/events-and-timing-depth
+https://learn.javascript.ru/obtaining-event-object
+https://learn.javascript.ru/event-bubbling
+Дивитись:
+https://www.youtube.com/watch?v=Sczl4lT7huk
+LocalStorage
+https://tproger.ru/articles/localstorage/
+https://developer.mozilla.org/…/docs/Web/API/W…/localStorage
+
+Про KeyCode Deprecated https://developer.mozilla.org/…/W…/API/KeyboardEvent/keyCode
+
+Завдання
+Удосконалити ваш TodoList.
+Додати можливість редагування, видалення елементів списку, а також можливість відмічати пункти як виконані. 
+Зміни зберігайте в LocalStorage, щоб після оновлення сторінки все завантажувалось в такому ж вигляді, як було до оновлення 
+(вам знадобляться setItem і getItem методи)

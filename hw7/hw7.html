@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work with DOM</title>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+</head>
+<body>
+    <form method="get" action="" id="addTask">
+        <strong>Что покупаем:</strong><br>
+        <input autofocus type="text" size="40" id="textIN">
+        <input type="submit" value="Добавить" id="addbutt">
+        <input type="button" value="Revers" id="reversbutt">
+    </form>
+
+
+    <form action="">
+        <ul class="item-list" id="list">
+
+        </ul>
+    </form>
+<script>
+    function locLoading (ind){
+        if (localStorage.getItem("checkbox"+ind)!='') {
+            let tab = document.createElement('li')
+            let TextIn = document.createElement('label');
+            let check = document.createElement('input');
+            let time = document.createElement('label');
+
+            let EditButton = document.createElement('button');
+            let DeleteButton = document.createElement('button');
+            EditButton.type = "button";
+            EditButton.innerHTML = "Edit";
+            EditButton.id = "Edit" + ind;
+
+            DeleteButton.type = "button";
+            DeleteButton.innerHTML = "DELETE";
+            DeleteButton.id = "DELETE" + ind;
+
+            check.type = "checkbox";
+            check.id = "checkbox" + ind;
+
+
+            TextIn.innerHTML = localStorage.getItem("text" + ind);
+            TextIn.id = "text" + ind;
+            TextIn.for="checkbox"+ind;
+
+            time.innerHTML = localStorage.getItem("time" + ind);
+            time.id = "time" + ind;
+            time.for="checkbox"+ind;
+
+            tab.type = "li";
+            tab.id = "li" + ind;
+
+
+            list.appendChild(tab);
+            tab.appendChild(check);
+            tab.appendChild(TextIn);
+            tab.appendChild(time);
+            tab.appendChild(EditButton);
+            tab.appendChild(DeleteButton);
+        }
+    }
+
+    if(localStorage.getItem('len')==null) {
+        localStorage.setItem('len', '' + 0);
+    }else{
+        for (let i = 0;i<+localStorage.getItem('len');i++){
+            locLoading(i+1);
+        }
+    }
+
+    addTask.addEventListener('submit', function addlist() {
+        let text=document.getElementById('textIN').value;
+        if (text!='') {
+            let len;
+
+                len=+localStorage.getItem('len')+1;
+                len+='';
+                localStorage.setItem('len',len);
+
+
+
+            let tab=document.createElement('li')
+            let TextIn = document.createElement('label');
+            let check=document.createElement('input');
+            let now = new Date();
+            let time= document.createElement('label');
+
+            let EditButton=document.createElement('button');
+            let DeleteButton=document.createElement('button');
+            EditButton.type="button";
+            EditButton.innerHTML="Edit";
+            EditButton.id="Edit"+len;
+
+            DeleteButton.type="button";
+            DeleteButton.innerHTML="DELETE";
+            DeleteButton.id="DELETE"+len;
+
+            check.type="checkbox";
+            check.id="checkbox"+len;
+
+            localStorage.setItem("checkbox"+len,'false');
+
+            TextIn.for="checkbox"+len;
+            TextIn.innerHTML = text;
+            TextIn.id = "text"+len;
+
+            localStorage.setItem("text"+len,text);
+
+            time.for="checkbox"+len;
+            time.innerHTML =':'+ ' '+  now.getDate()+'.'+now.getMonth()+'.'+now.getFullYear()+' '+' '+now.getHours()+':'+now.getMinutes();
+            time.id = "time"+len;
+            localStorage.setItem("time"+len,time.innerHTML);
+
+            tab.type="li";
+            tab.id="li"+len;
+
+            list.appendChild(tab);
+            tab.appendChild(check);
+            tab.appendChild(TextIn);
+            tab.appendChild(time);
+            tab.appendChild(EditButton);
+            tab.appendChild(DeleteButton);
+            document.getElementById('textIN').value='';
+
+        }
+        return false;
+ //       localStorage.setItem(orderdlist,list);
+    });
+
+    reversbutt.addEventListener('click', function revers() {
+        let tab = list.children;
+        for (let i = tab.length - 1; i>=0; i -- ) {
+            list.appendChild(tab[i]);
+        }
+
+    }
+
+
+    );
+    list.addEventListener('click', function () {
+        if(event.target.type =="button"){
+            if(event.target.innerHTML=="DELETE") {
+                let i=event.target.id;
+                i=+i.slice(6);
+                console.log(i);
+                console.log(event.target);
+
+                localStorage.setItem("time"+i,'');
+                localStorage.setItem("text"+i,'');
+                localStorage.setItem("checkbox"+i,'');
+
+                event.target.parentElement.remove();
+            }else if (event.target.innerHTML=="Edit") {
+                let i=event.target.id;
+                i=+i.slice(4);
+                console.log(i);
+                console.log(event.target);
+
+                localStorage.setItem("time"+i,'');
+                localStorage.setItem("text"+i,'');
+                localStorage.setItem("checkbox"+i,'');
+
+                console.log(event.target.parentElement.childNodes[1]);
+                console.log(event.target.parentElement.childNodes[0]);
+                document.getElementById('textIN').value=event.target.parentElement.childNodes[1].innerHTML;
+                event.target.parentElement.remove();
+            }
+
+        }
+
+
+    }
+    );
+
+</script>
+</body>
+
+</html>
