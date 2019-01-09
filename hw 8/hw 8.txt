@@ -1,0 +1,21 @@
+Заняття 2018-12-01
+jQuery (для ознайомлення, розбиратись з усим не потрібно):
+https://www.youtube.com/watch… - досить зручна розбита на теми серія уроків по jQuery, тратити час на всі не обов’язково, але щось може бути корисне))
+http://anton.shevchuk.name/javascript/jquery-for-beginners/
+https://developer.telerik.com/…/tutori…/im-not-using-jquery/
+
+Drag&Drop:
+https://www.html5rocks.com/ru/tutorials/dnd/basics/
+https://developer.mozilla.org/…/Web/Guide/HTML/Drag_and_drop
+https://developer.mozilla.org/en-…/docs/Web/API/DataTransfer
+
+Завдання:
+Реалізувати гру "п'ятнашки" (https://ru.wikipedia.org/…/%D0%98%D0%B3%D1%80%D0%B0_%D0%B2_…)
+
+Можна використовувати jQuery і його плагіни для Drag&Drop. Спробуйте реалізувати можливість гри мишкою та з клавіатури (стрілочками).
+У випадку перемоги виводити користувачу вітальне повідомлення.
+
+Якщо справитесь з першим завданням швидко, спробуйте створити свій слайдер на jQuery (на основі ненумерованого списку (селектор ul), 
+всередині кожного елементу - картинка і текст. Елементи змінювати по таймеру ,можна використовувати css анімації, можна анімації jQuery))
+
+Код з заняття: https://github.com/ira-ivakha/geekhub-2018-dragdrop
