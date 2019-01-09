@@ -1,0 +1,10 @@
+#list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#list li img {
+    width: 300px;
+    height: auto;
+}
