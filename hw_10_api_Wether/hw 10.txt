@@ -1,0 +1,29 @@
+Заняття 2018-12-15
+Презентація з заняття
+https://l.facebook.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1OvBu-Man2Rm6I7B-lpFw1Qu0ZOXZ8Omtznz_B9dLaV0%2Fedit%3Fusp%3Dsharing%26fbclid%3DIwAR1HBFWbawTCQ0vpWvfQ2Y9L_ryiE9YkLfudOBGPQPJx-JP3BRZBTJ7UV40&h=AT3RY1-JxfG0VSn8Wx4ovNFkeCF5yczYADc7Y4RL1EJ6JicZnTxQ5Ybi6o73nYLRc4n_R1HMuHhT0DHyAot1_zL7wyhMoynM4sStn6ReITmzK92d_O3h1BKhoCR0aKFbeXDLMOWSSJzc9rdQbN6XckpwV-s3HyWrGcETGA
+
+Код з заняття( Goolge maps API) https://github.com/ira-ivakha/geekhub2018-gmap-api
+
+
+Читати (і спробувати розібратись з прикладами на node.js, які зустрічаються в тексті: 
+https://learn.javascript.ru/ajax-intro
+https://learn.javascript.ru/ajax-nodejs
+https://learn.javascript.ru/ajax-xmlhttprequest
+https://learn.javascript.ru/xhr-forms
+https://learn.javascript.ru/xhr-crossdomain
+https://learn.javascript.ru/xhr-onprogress
+Також читати:
+https://api.jquery.com/jQuery.ajax/…
+Дивитись: 
+https://www.youtube.com/playlist?list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg&fbclid=IwAR0-3jNdSnmTsvAzgiCTQ3jV90HnJUwT8tYzV8Ak-ijGGOdDAshEx7HfPic
+ (перші 8 уроків)
+
+Аппчик для відладки запитів Postman - https://www.getpostman.com/
+
+Завдання:
+1. Створити сторінку з полем для вводу назви міста (варіанти - координат, адреси і т.п.) Коли ввели - відправляємо запит на
+ https://openweathermap.org/api і виводимо на сторінку поточну погоду в заданій локації. (Сервіс безкоштовний, але після реєстрації 
+ потрібно трохи почекати для активації ключа). 
+2. Каталог free API: https://market.mashape.com/explore?sort=developers. Оберіть будь-яких два з них і реалізуйте взаємодію з ними 
+(відправку-отримання і обробку даних). Один реалізовуємо з використанням XMLHttpRequest об’єкту, інший - методом jQuery.ajax. 
+3. Підготувати коротеньку доповідь (5хв) про xhr.upload події і jQuery.ajax події. Методика визначення доповідача незмінна - Math.random()
