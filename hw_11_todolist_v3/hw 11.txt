@@ -1,0 +1,15 @@
+Заняття 2018-12-22
+Читати:
+https://alexatnet.com/model-view-controller-mvc-in-javascript/?fbclid=IwAR3Xk5o_0lGanZUQltijnxIWYEEZhfquInNf4EHRPb1Pp1ZcZE22NaDR6c0
+https://m.habrahabr.ru/post/119369/
+http://www.internet-technologies.ru/articles/article_2723.html?fbclid=IwAR0JM0m-r8T_mRQGoHnOB_euxKEmjv_oGwXsew3oIoQbpevZd0hwKMT0bOQ
+https://developer.chrome.com/static/images/mvc.png
+Обов’язково подивитись: 
+http://todomvc.com/
+
+Код з заняття: 
+https://github.com/Dubiy/js-mvc-example
+(в репозиторії два бранчі: master - 1й приклад, lesson - наступний код)
+
+Завдання: 
+Переписати Todolist з використанням MVC. Повинно бути: Drag&drop, зберігання в localstorage, кнопка reverse для сортування списка в зворотному порядку.
