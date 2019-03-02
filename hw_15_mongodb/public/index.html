@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Server</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <form id="add-food" action="/add-food" method="post">
+                <p>
+                    <label>
+                        Food
+                        <input id="AddFood" class="form-control" type="text" name="Food" />
+                    </label>
+                    <label>
+                        Сalories
+                        <input id="AddCal" class="form-control" type="text" name="cal" />
+                    </label>
+                    <button class="btn btn-dark">ADD</button>
+                </p>
+
+            </form>
+
+            <form id="menu">
+                <p>
+
+                    <button id="Menu_B" class="btn btn-dark" name="Menu" value="menu" >Menu</button>
+
+                    <button id="BF_B" class="btn btn-dark" name="BF" value="bf">BF</button>
+
+                    <button id="Lunch_B" class="btn btn-dark" name="Lunch"  value="lanch">Lunch</button>
+
+                    <button id="Dinner_B" class="btn btn-dark" name="Dinner" value="diner">Dinner</button>
+
+                    <label id="Sum_KCal">0</label>
+                    <label>KCal</label>
+                </p>
+
+            </form>
+            <ul id ="DataBase" >
+
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="js/calc.js"></script>
+<script type="text/javascript" src="js/button.js"></script>
+<script type="text/javascript" src="js/in_html.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/req.js"></script>
+<script type="text/javascript" src="js/req_menu.js"></script>
+
+
+
+    <!--<script type="text/javascript" src="js/db_buton.js"></script>-->
+
+<!--// bootstrap-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+
+    </script>
+    </body>
+</html>
