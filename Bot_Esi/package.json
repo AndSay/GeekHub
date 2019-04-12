@@ -1,0 +1,21 @@
+{
+  "name": "telegram-_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "mysql": "^2.16.0",
+    "telegraf": "^3.27.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.uw-t.com:2224/AndSee/VGBot.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
